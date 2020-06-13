@@ -1,10 +1,11 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace McMatters\LumenFormRequest;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+
 use function array_filter, is_array;
 
 /**

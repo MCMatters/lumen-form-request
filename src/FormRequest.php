@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace McMatters\LumenFormRequest;
 
@@ -9,8 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\UnauthorizedException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Validation\Validator;
-use const null;
+
 use function count, is_array, method_exists;
+
+use const null, true;
 
 /**
  * Class FormRequest
@@ -21,8 +23,10 @@ class FormRequest extends Request
 {
     /**
      * @return void
+     *
      * @throws \Illuminate\Validation\UnauthorizedException
      * @throws \Illuminate\Validation\ValidationException
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function validate()
     {
@@ -97,6 +101,8 @@ class FormRequest extends Request
 
     /**
      * @return \Illuminate\Validation\Validator
+     *
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     protected function getValidator(): Validator
     {
